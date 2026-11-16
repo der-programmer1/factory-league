@@ -35,4 +35,4 @@ Die Wiederherstellungsdatei ist für eine neue, leere Datenbank gedacht und übe
 
 ## Datenbank-ID beim Deploy
 
-Das Deploy-Skript ermittelt die aktuelle ID der vorhandenen Datenbank anhand ihres konfigurierten Namens mit `wrangler d1 list --json`. Erst nach eindeutiger Zuordnung laufen Migrationen und Worker-Deploy. Dadurch wird eine eventuell veraltete Datenbank-ID aus einem abgebrochenen Vorlagenstart nicht verwendet. Eine fehlende Datenbank wird nicht stillschweigend neu angelegt.
+Das Deploy-Skript ermittelt die aktuelle ID der vorhandenen Datenbank anhand ihres konfigurierten Namens mit `wrangler d1 list --json`. Erst nach eindeutiger Zuordnung laufen Migrationen und Worker-Deploy. Dadurch wird eine eventuell veraltete Datenbank-ID aus einem abgebrochenen Vorlagenstart nicht verwendet. Fehlt der konfigurierte Name im Konto, wird genau diese Datenbank angelegt und anschließend erneut aufgelöst. Vorhandene Datenbanken werden nicht ersetzt oder gelöscht. Bei fehlenden Berechtigungen oder einem Kontingentfehler stoppt der Deploy.

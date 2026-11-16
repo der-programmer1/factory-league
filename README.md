@@ -23,7 +23,7 @@ Nur D1 und Workers werden verwendet, keine kostenpflichtigen Zusatzdienste. Es g
 - HttpOnly-/Secure-Sitzungscookies, Passwortrettung, Anmeldebegrenzung und öffentliche Profile ohne Accountgeheimnisse.
 - Eine automatische GitHub-Prüfung für Spiel, Datenbank, Produktionspaket sowie Desktop- und Handy-Oberfläche.
 
-Beim Vorbereiten dieses Umzugs war die bisherige Live-Datenbank leer: Es gab keine Accounts oder Spielstände zu übertragen. Die neue Instanz beginnt daher ebenfalls leer. Die bisherige Hosting-Instanz wird durch diesen Knopf nicht verändert.
+Es gibt inzwischen einen bestehenden Account mit Fabrik. Der Deploy-Knopf erstellt eine neue Datenbank; vorhandene Accounts und Spielstände werden dabei nicht automatisch übertragen. Für den Betreiber ist eine private Übernahmedatei vorbereitet. Die Anleitung steht in [UMZUG.md](UMZUG.md). Die bisherige Hosting-Instanz bleibt erreichbar, bis der Umzug geprüft ist.
 
 ## Entwicklung
 

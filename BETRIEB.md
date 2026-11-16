@@ -32,3 +32,7 @@ node scripts/backup-to-sql.mjs backup.json restored-factory.sql
 ```
 
 Die Wiederherstellungsdatei ist für eine neue, leere Datenbank gedacht und überschreibt keine laufende Datenbank. Auch `PASSWORD_PEPPER` muss für eine Wiederherstellung erhalten bleiben. Vor dem Umschalten Bestände prüfen und die vorherige Datenbank erhalten.
+
+## Datenbank-ID beim Deploy
+
+Das Deploy-Skript ermittelt die aktuelle ID der vorhandenen Datenbank anhand ihres konfigurierten Namens mit `wrangler d1 list --json`. Erst nach eindeutiger Zuordnung laufen Migrationen und Worker-Deploy. Dadurch wird eine eventuell veraltete Datenbank-ID aus einem abgebrochenen Vorlagenstart nicht verwendet. Eine fehlende Datenbank wird nicht stillschweigend neu angelegt.
